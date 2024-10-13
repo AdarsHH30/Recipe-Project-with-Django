@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 <head>
     <title>Sign in to RECIPICA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -13,7 +13,7 @@
             align-items: center;
             height: 100vh;
         }
-        .background {
+        .background     {
             position: absolute;
             top: 0;
             left: 0;
@@ -98,15 +98,14 @@
     <div class="login-container">
         <i class="fas fa-times" style="float: right; cursor: pointer;"></i>
         <h1>Login to tasTe</h1>
-        <button class="google"><i class="fab fa-google"></i> Sign in with Google</button>
-        <button class="apple"><i class="fab fa-apple"></i> Sign in with Apple</button>
+        
         <div class="divider">or</div>
         <input type="text" placeholder="Phone, email, or username">
         <button class="next">Next</button>
         <a href="#" class="forgot-password">Forgot password?</a>
         <div>Don't have an account? <a href="#" class="signup">Sign up</a></div>
     </div>
-    <!-- <div class="footer">
+     <div class="footer">
         <a href="#">About</a>
         <a href="#">Download the X app</a>
         <a href="#">Help Center</a>
@@ -125,6 +124,72 @@
         <a href="#">Directory</a>
         <a href="#">Settings</a>
         <a href="#">© 2023 X Corp.</a>
-    </div> -->
+    </div> 
 </body>
+</html> 
+-->
+<html>
+ <head>
+  <title>
+   Login Page
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    
+    body {
+             font-family: 'Inter', sans-serif;
+             /* background-image: url('https://placehold.co/1920x1080'); */
+             background: url('https://img.freepik.com/free-photo/view-ready-eat-delicious-meal-go_23-2151431768.jpg?t=st=1726759116~exp=1726762716~hmac=5c67b4e1e76bf259a72fb07b838af01a4bdca7370bdba2e39f2696a8c0f558c6&w=1060') no-repeat center center;
+ 
+             background-size: cover;
+             background-position: center;
+             backdrop-filter: blur(5px)
+         }
+   </style>
+ </head>
+ <body class="bg-yellow-400 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+     <h2 class="text-gray-600 mb-4">
+    Please enter your details
+   </h2>
+   <h1 class="text-3xl font-bold mb-6">
+    Welcome back
+   </h1>
+   <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {% if messages %}
+    <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    </div>
+  {% endif %}
+    
+    <div class="mb-4">
+     <input class="w-full p-3 border border-gray-300 rounded-lg" name="username" placeholder="Email address" type="text"/>
+    </div>
+    <div class="mb-4">
+     <input class="w-full p-3 border border-gray-300 rounded-lg" name="password" placeholder="Password" type="password"/>
+    </div>
+    
+    <button class="w-full bg-blue-600 text-white p-3 rounded-lg mb-4" type="submit">
+     Sign up
+    </button>
+    <!-- <button class="w-full border border-gray-300 text-gray-700 p-3 rounded-lg flex items-center justify-center" type="button">
+     <i class="fab fa-google mr-2">
+     </i>
+     Sign in with Google
+    </button> -->
+   </form>
+   <p class="text-center mt-6 text-gray-500">
+    Don't have an account?
+    <a class="text-blue-500" href="/register/">
+        Register
+    </a>
+   </p>
+  </div>
+ </body>
+</html>
+<html
 </html>

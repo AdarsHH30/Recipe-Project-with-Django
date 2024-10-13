@@ -1,0 +1,67 @@
+<html>
+ <head>
+  
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+    
+    body {
+             font-family: 'Inter', sans-serif;
+             /* background-image: url('https://placehold.co/1920x1080'); */
+             background: url('https://img.freepik.com/free-photo/view-ready-eat-delicious-meal-go_23-2151431768.jpg?t=st=1726759116~exp=1726762716~hmac=5c67b4e1e76bf259a72fb07b838af01a4bdca7370bdba2e39f2696a8c0f558c6&w=1060') no-repeat center center;
+ 
+             background-size: cover;
+             background-position: center;
+             backdrop-filter: blur(5px)
+         }
+   </style>
+ </head>
+ <body class="bg-yellow-400 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+   <h2 class="text-gray-600 mb-4">
+    Please enter your details
+   </h2>
+   <h1 class="text-2xl font-bold mb-6">
+    Create an account
+   </h1>
+   
+
+
+   <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if messages %}
+    <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+    <div class="mb-4">
+      <input class="w-full p-3 border border-gray-300 rounded-lg" name="first_name" placeholder="First Name" type="text"/>
+     </div>
+    <div class="mb-4">
+     <input class="w-full p-3 border border-gray-300 rounded-lg" name="last_name" placeholder="Last Name" type="text"/>
+    </div>
+    <div class="mb-4">
+     <input class="w-full p-3 border border-gray-300 rounded-lg" name="username" placeholder="Username/Email" type="text"/>
+    </div>
+    <div class="mb-4">
+     <input class="w-full p-3 border border-gray-300 rounded-lg" name = "password" placeholder="Password" type="password"/>
+    </div>
+     
+    
+    <button class="w-full bg-blue-500 text-white p-3 rounded-lg">
+     Register
+    </button>
+   </form>
+   <p class="mt-6 text-center text-gray-600">
+    Already have an account?
+    <a class="text-blue-500" href="/login/">
+        Login   
+    </a>
+   </p>
+  </div>
+  
+ </body>
+</html>
