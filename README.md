@@ -70,7 +70,7 @@ Here’s what you’ll find in the project:
 ## 🛠 Built With
 
 - **Django**: The heart of the app.
-- **Django Rest Framework**: For building APIs (future-proofing, maybe?).
+- **Django Rest Framework**: For building APIs (future-proofing).
 - **Pillow**: For handling recipe images.
 
 ---
